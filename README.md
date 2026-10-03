@@ -18,10 +18,9 @@ python3 parser.py doxygen_warnings.log doxygen_report.csv
 
 Git LFS helps keep a repo small when it has large binary files. Git keeps a small reference to each file, while LFS stores the actual file. This can make cloning the repo faster and still lets us keep file versions.
 
-
 ### How can this repository be adjusted to support Git LFS?
 
-use command
+Use these commands:
 
 ```bash
 git lfs install
@@ -31,11 +30,11 @@ git add path/to/large-file.bin
 git commit -m "Track binary files with Git LFS"
 git push
 ```
+
 References:
 
 - [Git LFS](https://git-lfs.com/)
 - [GitHub: Configuring Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage)
-
 
 ### Are there easier alternatives to Git LFS?
 
