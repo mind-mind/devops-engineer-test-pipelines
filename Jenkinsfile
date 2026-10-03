@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin:${env.PATH}"
+        PATH = "/opt/homebrew/bin:${env.PATH}" // for test only, you can remove this line if doxygen is already in your PATH
     }
 
     stages {
