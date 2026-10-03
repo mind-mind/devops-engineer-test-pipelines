@@ -12,6 +12,7 @@ I ran:
 
 ```bash
 python3 parser.py doxygen_warnings.log doxygen_report.csv
+```
 
 ### What is the advantage of using Git LFS for binaries in Repo A?
 
@@ -22,13 +23,14 @@ Git LFS helps keep a repo small when it has large binary files. Git keeps a smal
 
 use command
 
+```bash
 git lfs install
 git lfs track "*.bin"
 git add .gitattributes
 git add path/to/large-file.bin
 git commit -m "Track binary files with Git LFS"
 git push
-
+```
 References:
 
 - [Git LFS](https://git-lfs.com/)
