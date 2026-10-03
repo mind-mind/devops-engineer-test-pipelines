@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/opt/homebrew/bin:${env.PATH}" // for test only, you can remove this line if doxygen is already in your PATH
+    }
+
     stages {
         stage('Clone Repo A') {
             steps {
@@ -13,14 +17,14 @@ pipeline {
             steps {
                 sh '''
                     doxygen -g Doxyfile
-                    sed -i 's|^INPUT .*|INPUT = src|' Doxyfile
-                    sed -i 's|^RECURSIVE .*|RECURSIVE = YES|' Doxyfile
-                    sed -i 's|^GENERATE_HTML .*|GENERATE_HTML = YES|' Doxyfile
-                    sed -i 's|^GENERATE_LATEX .*|GENERATE_LATEX = NO|' Doxyfile
-                    sed -i 's|^GENERATE_XML .*|GENERATE_XML = NO|' Doxyfile
-                    sed -i 's|^GENERATE_MAN .*|GENERATE_MAN = NO|' Doxyfile
-                    sed -i 's|^GENERATE_RTF .*|GENERATE_RTF = NO|' Doxyfile
-                    sed -i 's|^WARN_LOGFILE .*|WARN_LOGFILE = doxygen_warnings.log|' Doxyfile
+                    sed -i '' 's|^INPUT .*|INPUT = src|' Doxyfile
+                    sed -i '' 's|^RECURSIVE .*|RECURSIVE = YES|' Doxyfile
+                    sed -i '' 's|^GENERATE_HTML .*|GENERATE_HTML = YES|' Doxyfile
+                    sed -i '' 's|^GENERATE_LATEX .*|GENERATE_LATEX = NO|' Doxyfile
+                    sed -i '' 's|^GENERATE_XML .*|GENERATE_XML = NO|' Doxyfile
+                    sed -i '' 's|^GENERATE_MAN .*|GENERATE_MAN = NO|' Doxyfile
+                    sed -i '' 's|^GENERATE_RTF .*|GENERATE_RTF = NO|' Doxyfile
+                    sed -i '' 's|^WARN_LOGFILE .*|WARN_LOGFILE = doxygen_warnings.log|' Doxyfile
 
                     : > doxygen_warnings.log
                     doxygen Doxyfile
