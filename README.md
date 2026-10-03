@@ -4,7 +4,7 @@
 
 ### How did you test your pipelines?
 
-I ran Jenkins locally and tested Pipeline B and Pipeline C. I saved the Jenkins console logs in this branch as `taskB.log` and `taskC.log`.
+I ran Jenkins locally on macOS and tested Pipeline B and Pipeline C. I saved the Jenkins console logs in this branch as `taskB.log` and `taskC.log`.
 
 ### How did you test the Python parser in Repo C?
 
